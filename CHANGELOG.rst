@@ -7,6 +7,10 @@ This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
 `Unreleased`_
 ------------------------
+`0.3.7`_
+
+* Add config option to give servers shorter names in the MessageListWidget
+
 `0.3.6`_
 
 * Add config option to enable and disable notifications

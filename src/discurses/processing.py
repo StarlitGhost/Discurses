@@ -1,6 +1,9 @@
 import re
 
 import logging
+
+import discurses.config as config
+
 logger = logging.getLogger(__name__)
 
 
@@ -61,7 +64,13 @@ def channel_name(ch):
     if ch.is_private:
         return ch.name or ', '.join(u.display_name for u in ch.recipients)
     else:
-        return "{0}#{1}".format(ch.server.name, ch.name)
+        if 'short_server_names' in config.table:
+            ct = config.table
+            if ch.server.name in ct['short_server_names']:
+                server = ct['short_server_names'][ch.server.name]
+        else:
+            server = ch.server.name
+        return "{0}#{1}".format(server, ch.name)
 
 
 def shorten_channel_names(channels, length):

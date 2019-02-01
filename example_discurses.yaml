@@ -2,3 +2,8 @@
 token: ADD_YOUR_TOKEN_HERE
 # Set this to True or False for notifications
 notify: True
+# Mapping of full server names to alternate ones
+# used when viewing messages from multiple channels in the same buffer
+short_server_names: {}
+#   Example Server: exserv
+
